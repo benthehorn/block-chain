@@ -17,6 +17,10 @@ module.exports = class Block {
         return this._index;
     }
 
+    set index(value){
+        this._index = value;
+    }
+
     get previousHash() {
         return this._previousHash;
     }
