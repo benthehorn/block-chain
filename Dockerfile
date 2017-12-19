@@ -1,10 +1,10 @@
 FROM node:4.6
 
-RUN mkdir /naivechain
-ADD package.json /naivechain/
-ADD main.js /naivechain/
+RUN mkdir /blockchain
+ADD package.json /blockchain/
+ADD main.js /blockchain/
 
-RUN cd /naivechain && npm install
+RUN cd /blockchain && npm install
 
 EXPOSE 3001
 EXPOSE 6001
