@@ -2,7 +2,7 @@ FROM node:4.6
 
 RUN mkdir /blockchain
 ADD package.json /blockchain/
-ADD main.js /blockchain/
+ADD app.js /blockchain/
 
 RUN cd /blockchain && npm install
 
