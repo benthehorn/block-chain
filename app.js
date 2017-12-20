@@ -53,7 +53,7 @@ bc.addBlock("Nos");
 bc.addBlock("Freddy");
 bc.addBlock("Martin");
 bc.addBlock("Richard");
-console.log(bc.getChain())
+console.log(bc.getChain());
 
 function validateChain() {
     var valid = true
@@ -65,7 +65,7 @@ function validateChain() {
     return valid;
 }
 
-console.log(validateChain())
+console.log(validateChain());
 
 var initHttpServer = () => {
 
