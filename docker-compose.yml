@@ -1,49 +1,49 @@
 version: "2.1"
 
 services:
-  node1:
-    container_name: node1
+  peer1:
+    container_name: peer1
     image: benthehorn/block-chain-project
     ports:
       - "3001:3001"
     networks:
       - blockchain
-  node2:
+  peer2:
     environment:
-      - PEERS=ws://node1:6001
-    container_name: node2
+      - PEERS=ws://peer1:6001
+    container_name: peer2
     image: benthehorn/block-chain-project
     ports:
       - "3002:3001"
     networks:
       - blockchain
     links:
-      - node1:node1
-  node3:
+      - peer1:peer1
+  peer3:
     environment:
-      - PEERS=ws://node2:6001
-      - PEERS=ws://node1:6001
-    container_name: node3
+      - PEERS=ws://peer2:6001
+      - PEERS=ws://peer1:6001
+    container_name: peer3
     image: benthehorn/block-chain-project
     ports:
       - "3003:3001"
     networks:
       - blockchain
     links:
-      - node2:node2
-  node4:
+      - peer2:peer2
+  peer4:
     environment:
-      - PEERS=ws://node3:6001
-      - PEERS=ws://node2:6001
-      - PEERS=ws://node1:6001
-    container_name: node4
+      - PEERS=ws://peer3:6001
+      - PEERS=ws://peer2:6001
+      - PEERS=ws://peer1:6001
+    container_name: peer4
     image: benthehorn/block-chain-project
     ports:
       - "3004:3001"
     networks:
       - blockchain
     links:
-      - node3:node3
+      - peer3:peer3
 
 networks:
   blockchain:
