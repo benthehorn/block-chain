@@ -45,3 +45,24 @@ function createGenesisBlock() {
 ```
 
 Blocks are stored in an Array.
+
+When the program is first run, a sample block chain is created, and we can see that the hashes are
+correctly synchronized., with the hash of the first block being the previous hash of the next.
+
+```
+Block {
+    _previousHash: '00004f9e999536c39cb44b2353f38aaa20c55366fbd28ba4f35148750defa36c',
+    _index: 3,
+    _timestamp: 705,
+    _data: 'Martin',
+    _nonce: 209814,
+    _hash: '00002acf3a4d82850ae488e581c9fb7d5b7708c70e0d1484a56084768d3a85c3' },
+  Block {
+    _previousHash: '00002acf3a4d82850ae488e581c9fb7d5b7708c70e0d1484a56084768d3a85c3',
+    _index: 4,
+    _timestamp: 72,
+    _data: 'Richard',
+    _nonce: 100210,
+    _hash: '00008b583ea8c865f136837a4974e4f66a282124db90db3b178592ce9e9d8232' } ]
+
+```
