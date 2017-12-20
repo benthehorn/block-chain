@@ -89,7 +89,7 @@ var initHttpServer = () => {
     /*portfinder.getPort((err, port) => {
         app.listen(port, () => console.log('Listening on port : ' + port));
     });*/
-    app.listen(port, () => console.log('Listening on port : ' + port));
+    app.listen(http_port, () => console.log('Listening on port : ' + http_port));
 
 }
 
