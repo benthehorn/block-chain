@@ -71,7 +71,7 @@ var initHttpServer = () => {
 
     var app = express();
     app.use(bodyParser.json());
-    app.get('/blocks', (req, res) => res.send(JSON.stringify(blockChain)));
+    app.get('/blocks', (req, res) => res.send(JSON.stringify(bc)));
     app.post('/mineBlock', (req, res) => {
         var newBlock = req.body.data;
         addABlock(newBlock);
