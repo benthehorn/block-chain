@@ -86,9 +86,10 @@ var initHttpServer = () => {
         connectToPeers([req.body.peer]);
         res.send();
     });
-    portfinder.getPort((err, port) => {
+    /*portfinder.getPort((err, port) => {
         app.listen(port, () => console.log('Listening on port : ' + port));
-    })
+    });*/
+    app.listen(port, () => console.log('Listening on port : ' + port));
 
 }
 
