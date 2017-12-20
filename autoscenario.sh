@@ -15,6 +15,11 @@ echo " Now we will run the docker compose file."
 docker-compose up -d
 echo " We will now see the 4 peers being initiated."
 echo " "
+echo " "
+echo " Lets see all of the peers."
+curl http://localhost:/3001/peers
+echo " "
+echo " "
 echo " To see the test blocks created :"
 curl http://localhost:3001/blocks
 echo " "

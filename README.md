@@ -102,3 +102,7 @@ getPort();
 
 But if it were to work, we would have a true p2p network, where the initial node would search for others,
 then become the server if none were found.
+
+Sources we have used:
+*Source: https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54*
+*Source: https://github.com/lhartikk/naivechain*
