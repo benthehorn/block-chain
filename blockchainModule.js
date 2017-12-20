@@ -2,7 +2,7 @@
 var Block = require('./model/BlockModel');
 
 
-var blockChain = [createGenesisBlock()]
+var blockChain = [createGenesisBlock()];
 
 function createGenesisBlock() {
     return new Block(0, "0", 0, "Genesis");
