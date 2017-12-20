@@ -1,12 +1,15 @@
 FROM node:4.6
 
-RUN mkdir /naivechain
-ADD package.json /naivechain/
-ADD main.js /naivechain/
+RUN mkdir /blockchain
+RUN mkdir/blockchain/model
+ADD package.json /blockchain/
+ADD app.js /blockchain/
+ADD blockchainModule.js /blockchain/
+ADD model/BlockModel.js /blockchain/model/
 
-RUN cd /naivechain && npm install
+RUN cd /blockchain && npm install
 
 EXPOSE 3001
 EXPOSE 6001
 
-ENTRYPOINT cd /naivechain && npm install && PEERS=$PEERS npm start
+ENTRYPOINT cd /blockchain && npm install && PEERS=$PEERS npm start
