@@ -1,7 +1,7 @@
 FROM node:4.6
 
 RUN mkdir /blockchain
-RUN mkdir/blockchain/model
+RUN mkdir /blockchain/model
 ADD package.json /blockchain/
 ADD app.js /blockchain/
 ADD blockchainModule.js /blockchain/
