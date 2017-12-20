@@ -66,3 +66,39 @@ Block {
     _hash: '00008b583ea8c865f136837a4974e4f66a282124db90db3b178592ce9e9d8232' } ]
 
 ```
+
+Still to do:
+Using the npm portfinder module.
+The following function won't work with docker, because it finds open ports, then uses them.
+This is a problem we couldn't solve, as the docker compose file requires ports to be defined:
+
+```
+function getPort() {
+    tcpPortUsed.check(6001, '127.0.0.1')
+        .then(function (inUse) {
+            if (inUse) {
+                portfinder.getPort((err, port) => {
+                    initP2PServer(port);
+                })
+            } else {
+                initP2PServer(6001);
+            }
+
+        }, function (err) {
+            console.log(err)
+            portfinder.getPort((err, port) => {
+                initP2PServer(port);
+            })
+        }).catch(err => {
+        portfinder.getPort((err, port) => {
+            initP2PServer(port);
+        })
+    });
+}
+
+getPort();
+
+```
+
+But if it were to work, we would have a true p2p network, where the initial node would search for others,
+then become the server if none were found.
