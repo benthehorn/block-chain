@@ -35,7 +35,7 @@ addABlock("Nos");
 addABlock("Freddy");
 addABlock("Martin");
 addABlock("Richard");
-console.log(blockChain)
+console.log(blockChain);
 
 function validateChain() {
     var valid = true
