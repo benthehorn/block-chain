@@ -1,5 +1,10 @@
-# block-chain
+# block-chain:
+
 School assignment about Blockchains.
+
+As it stands , our bash script doesn't work fully. We are having trouble with the docker file and can't
+
+find the solution. 
 
 ## Implementation:
 
@@ -47,6 +52,7 @@ function createGenesisBlock() {
 Blocks are stored in an Array.
 
 When the program is first run, a sample block chain is created, and we can see that the hashes are
+
 correctly synchronized., with the hash of the first block being the previous hash of the next.
 
 ```
