@@ -1,4 +1,4 @@
-FROM node:4.6
+FROM node:latest
 
 RUN mkdir /blockchain
 RUN mkdir /blockchain/model

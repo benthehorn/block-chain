@@ -14,11 +14,14 @@
   "author": "Semester groupies",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "crypto-js": "^3.1.9-1",
-    "express": "^4.16.2",
+    "body-parser": "^1.15.2",
+    "crypto-js": "^3.1.6",
+    "express": "~4.11.1",
     "portfinder": "^1.0.13",
     "tcp-port-used": "^0.1.2",
-    "ws": "^3.3.2"
+    "ws": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=4.3.2"
   }
 }

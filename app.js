@@ -14,7 +14,8 @@ var MessageType = {
     QUERY_ALL: 1,
     RESPONSE_BLOCKCHAIN: 2
 };
-var blockChain = [createGenesisBlock()]
+var blockChain = [createGenesisBlock()];
+var getLatestBlock = () => blockChain[blockChain.length - 1];
 
 /*function getPort() {
     tcpPortUsed.check(6001, '127.0.0.1')
@@ -51,7 +52,16 @@ function addABlock(data) {
     var nextIndex = lastBlock.index +1;
     blockChain.push(new Block(nextIndex, lastBlock.hash, new Date().getMilliseconds(), data))
 }
+var queryChainLengthMsg = () => ({'type': MessageType.QUERY_LATEST});
+var queryAllMsg = () => ({'type': MessageType.QUERY_ALL});
+var responseChainMsg = () =>({
+    'type': MessageType.RESPONSE_BLOCKCHAIN, 'data': JSON.stringify(blockChain)
+});
 
+var responseLatestMsg = () => ({
+    'type': MessageType.RESPONSE_BLOCKCHAIN,
+    'data': JSON.stringify([getLatestBlock()])
+});
 
 // 0000beb3f1dadcf4bac70bd6b37c01ec95a73d2d1745d4863cf4406759e8da9a
 // 0000beb3f1dadcf4bac70bd6b37c01ec95a73d2d1745d4863cf4406759e8da9a
@@ -194,16 +204,11 @@ var isValidChain = (blockchainToValidate) => {
     return true;
 };
 
-var getLatestBlock = () => blockChain[blockChain.length - 1];
-var queryChainLengthMsg = () => ({'type': MessageType.QUERY_LATEST});
-var queryAllMsg = () => ({'type': MessageType.QUERY_ALL});
-var responseChainMsg = () =>({
-    'type': MessageType.RESPONSE_BLOCKCHAIN, 'data': JSON.stringify(blockChain)
-});
-var responseLatestMsg = () => ({
-    'type': MessageType.RESPONSE_BLOCKCHAIN,
-    'data': JSON.stringify([getLatestBlock()])
-});
+
+
+
+
+
 
 var write = (ws, message) => ws.send(JSON.stringify(message));
 var broadcast = (message) => sockets.forEach(socket => write(socket, message));
